@@ -1,9 +1,45 @@
 # APIs
 
-Este projeto esta sendo realizado por mim e tera algumas categorias de APIs (geralmente já com aplicação em HTML)
+Projeto contendo múltiplas APIs organizadas por categoria, geralmente acompanhadas de aplicações HTML.
+
+---
 
 ## API de Usuários
 
-Uma API REST simples para gerenciar usuários, construída com **Node.js**, **Express** e **Prisma** com banco de dados **SQLite**.
+API REST para gerenciamento de usuários.
 
-## Novas APIs em breve
+<details>
+<summary>📌 Saiba mais</summary>
+  
+  ### Tecnologias
+  - Node.js
+  - Express
+  - Prisma
+  - SQLite
+
+  ### Instalação
+    
+  ```bash
+  git clone <repo>
+  cd projeto
+  npm install
+  npm run dev
+  ```
+
+  ### Funcionalidades
+  | Método | Rota       | Descrição             |
+  |--------|------------|-----------------------|
+  | GET    | /users     | Lista usuários        |
+  | POST   | /users     | Cria usuário          |
+  | PUT    | /users/:id | Atualiza usuário      |
+  | DELETE | /users/:id | Remove usuário        |
+
+  ### Aplicação HTML
+  > 🚧 Em desenvolvimento
+
+</details>
+
+---
+
+> 🚧 Projeto em desenvolvimento
+<!-- > 🚧 Nova API em breve -->
