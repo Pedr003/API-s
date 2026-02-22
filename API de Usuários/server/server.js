@@ -1,10 +1,14 @@
 import express from 'express'
+import cors from 'cors'
 import { PrismaClient } from '@prisma/client'
 
 const app = express()
 const prisma = new PrismaClient()
 
 app.use(express.json())
+app.use(cors({
+    origin: 'http://localhost:5173'
+}))
 
 // POST - Criar novo usuário
 app.post('/users', async (req, res) => {
@@ -72,7 +76,7 @@ app.put('/users/:id', async (req, res) => {
             }
         })
 
-        res.status(200).json({ message:'Usuário atualizado com sucesso:' })
+        res.status(200).json({ message: 'Usuário atualizado com sucesso:' })
     } catch (error) {
         console.error('Erro ao atualizar usuário:', error)
         res.status(500).json({ error: 'Erro ao atualizar usuário' })
