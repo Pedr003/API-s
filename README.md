@@ -8,8 +8,6 @@ Projeto contendo múltiplas APIs organizadas por categoria, geralmente acompanha
 
 API REST para gerenciamento de usuários.
 
-<details>
-<summary>📌 Saiba mais</summary>
   
   ### Tecnologias
   - Node.js
@@ -17,14 +15,37 @@ API REST para gerenciamento de usuários.
   - Prisma
   - SQLite
 
-  ### Instalação
+  ### Instalação servidor
     
   ```bash
   git clone <repo>
-  cd projeto
+  cd server
+  npm install
+  ```
+
+  Crie um arquivo chamado **.env**, escreva nele:
+  ```bash
+  DATABASE_URL="file:./dev.db"
+  ```
+
+  Criar e conectar banco de dados:
+  ```bash
+  npx prisma generate
+  npx prisma db push
+  ```
+
+  Iniciar servidor:
+  ```bash
+  node server.js
+  ```
+  Servidor rodando na porta 3000
+  
+  ### Instalação frontend
+  ```bash
   npm install
   npm run dev
   ```
+  
 
   ### Funcionalidades
   | Método | Rota       | Descrição             |
@@ -36,8 +57,6 @@ API REST para gerenciamento de usuários.
 
   ### Aplicação HTML
   > 🚧 Em desenvolvimento
-
-</details>
 
 ---
 

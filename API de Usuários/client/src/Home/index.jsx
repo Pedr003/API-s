@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import './style.css'
-import api from '../../services/api'
+import api from '../services/api.js'
 
 function Home() {
   const [users, setUsers] = useState([])

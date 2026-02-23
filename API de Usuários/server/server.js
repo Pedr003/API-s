@@ -1,14 +1,23 @@
-import express from 'express'
-import cors from 'cors'
-import { PrismaClient } from '@prisma/client'
+import "dotenv/config"
+import express from "express"
+import cors from "cors"
+import { PrismaClient } from "@prisma/client"
+import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3"
 
 const app = express()
-const prisma = new PrismaClient()
+
+const adapter = new PrismaBetterSqlite3({
+    url: process.env.DATABASE_URL,
+})
+
+const prisma = new PrismaClient({
+    adapter,
+})
 
 app.use(express.json())
-app.use(cors({
-    origin: 'http://localhost:5173'
-}))
+/*app.use(cors({
+    origin: "http://localhost:5173",
+}))*/
 
 // POST - Criar novo usuário
 app.post('/users', async (req, res) => {
